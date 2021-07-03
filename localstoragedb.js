@@ -177,10 +177,10 @@
 
         // insert a new row
         function insert(table_name, data) {
-            data.ID = db.tables[table_name].auto_increment;
-            db.data[table_name][ db.tables[table_name].auto_increment ] = data;
-            db.tables[table_name].auto_increment++;
-            return data.ID;
+            const id = data.ID || db.tables[table_name].auto_increment++;
+            data.ID = id;
+            db.data[table_name][ id ] = data;
+            return id;
         }
 
         // select rows, given a list of IDs of rows in a table
