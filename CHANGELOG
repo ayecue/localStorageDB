@@ -1,5 +1,6 @@
 v2.3.3 [4 Jul 2021]
 - Added Map as an engine option
+- Respect already set ID property
 
 v2.3.2 [20 Mar 2018]
 - Added getitem, setItem, replace
