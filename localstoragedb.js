@@ -1,9 +1,10 @@
 /*
 	Kailash Nadh (http://nadh.in)
 
-	localStorageDB v 2.3.2
+	localStorageDB v 2.3.3
 	A simple database layer for localStorage
 
+    v 2.3.3 Mar 2021 Contribution: ayecue
     v 2.3.2 Mar 2018 Contribution: Ken Kohler
 	v 2.3.1 Mar 2015
 	v 2.3 Feb 2014 Contribution: Christian Kellner (http://orange-coding.net)
@@ -24,9 +25,14 @@
 
         var storage;
         try {
-            storage = (engine === sessionStorage ? sessionStorage: localStorage);
+            storage = engine || localStorage;
         } catch(e) { // ie8 hack
             storage = engine;
+        }
+
+        //if engine is map polyfill setItem
+        if (storage instanceof Map) {
+            storage.setItem = Map.prototype.set.bind(storage);
         }
 
         // if the database doesn't exist, create it

@@ -1,11 +1,12 @@
-# localStorageDB 2.3.2
-localStorageDB is a simple layer over localStorage (and sessionStorage) that provides
+# localStorageDB 2.3.3
+localStorageDB is a simple layer over localStorage (and sessionStorage + Map) that provides
 a set of functions to store structured data like databases and tables.
 It provides basic insert/update/delete/query capabilities.
 localStorageDB has no dependencies, and is not based on WebSQL. Underneath it all,
-the structured data is stored as serialized JSON in localStorage or sessionStorage.
+the structured data is stored as serialized JSON in localStorage, sessionStorage or Map.
 
 - Kailash Nadh
+- v 2.3.3 Mar 2021 Contribution: ayecue
 - v 2.3.2 Mar 2018 Contribution: Ken Kohler
 - v 2.3.1 Mar 2015
 - v 2.3.0 Feb 2014 Contribution: Christian Kellner (http://orange-coding.net)
